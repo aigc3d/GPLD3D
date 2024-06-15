@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors">
+  <meta property="og:title" content="GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors"/>
+  <meta property="og:description" content="GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/tag_image.png" />
+  <meta property="og:image:width" content="1808"/>
+  <meta property="og:image:height" content="1014"/>
+
+
+  <meta name="twitter:title" content="GPLD3D">
+  <meta name="twitter:description" content="GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/tag_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="3D Object Generation; Latent Diffusion, Geometric Priors, Physical Priors">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/aigc3d">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://aigc3d.github.io/gobjaverse">
+            G-Objaverse
+          </a>
+          <a class="navbar-item" href="https://aigc3d.github.io/VideoMV">
+            VideoMV
+          </a>
+          <a class="navbar-item" href="https://aigc3d.github.io/ConsistenTex">
+            ConsistenTex
+          </a>
+          <a class="navbar-item" href="https://aigc3d.github.io/richdreamer">
+            RichDreamer
+          </a>
+          <a class="navbar-item" href="https://aigc3d.github.io/motionshop">
+            Motionshop
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priorse</h1>
+            <div class="is-size-4 publication-conference">CVPR2024</div>
+            <div class="is-size-6 publication-authors">
+              <!-- Paper authors -->
+                <span class="author-block">
+                <a href="mailto:yuandong15@fudan.edu.cn" target="_blank">Yuan Dong</a><sup>1*</sup>,</span>
+                <span class="author-block">
+                <a href="mailto:muyuan.zq@alibaba-inc.com" target="_blank">Qi Zuo</a><sup>1*</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=aJPO514AAAAJ&hl=zh-CN&oi=ao" target="_blank">Xiaodong Gu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://weihao-yuan.com/" target="_blank">Weihao Yuan</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="mailto:bushe.zzy@alibaba-inc.com" target="_blank">Zhengyi Zhao</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=GHOQKCwAAAAJ&hl=zh-CN&oi=ao" target="_blank">Zilong Dong</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=FJwtMf0AAAAJ&hl=zh-CN" target="_blank">Liefeng Bo</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://www.cs.utexas.edu/~huangqx/" target="_blank">Qixing Huang</a><sup>2#</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-6 publication-authors">
+                    <span class="author-block"><sup>1</sup>Institute for Intelligent Computing, Alibaba Group,</small></span>
+                    <span class="author-block" style="white-space: nowrap;"><sup>2</sup>The University of Texas at Austin Austin&nbsp</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Dong_GPLD3D_Latent_Diffusion_of_3D_Shape_Generative_Models_by_Enforcing_CVPR_2024_paper.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                        <!-- ArXiv abstract Link -->
+<!--                <span class="link-block">-->
+<!--                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="ai ai-arxiv"></i>-->
+<!--                  </span>-->
+<!--                  <span>arXiv</span>-->
+<!--                </a>-->
+<!--              </span>-->
+
+                    <!-- Video link -->
+                    <span class="link-block">
+                      <a href="https://www.youtube.com/watch?v=-uIQAmH9CEI" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Youtube</span>
+                    </a>
+                  </span>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/teaser.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        (Left) Synthetic shapes generated by 3DS2VS, which present various issues in geometric feasibility and physical stability. (Right) Synthetic shapes generated by GPLD3D, which have significantly improved geometric feasibility and physical stability.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            State-of-the-art man-made shape generative models usually adopt established generative models under a suitable implicit shape representation. A common theme is to perform distribution alignment, which does not explicitly model important shape priors. As a result, many synthetic shapes are not connected. Other synthetic shapes present problems of physical stability and geometric feasibility. This paper introduces a novel latent diffusion shape-generative model regularized by a quality checker that outputs a score of a latent code. The scoring function employs a learned function that provides a geometric feasibility score and a deterministic procedure to quantify a physical stability score. The key to our approach is a new diffusion procedure that combines the discrete empirical data distribution and a continuous distribution induced by the quality checker. We introduce a principled approach to determine the tradeoff parameters for learning the denoising network at different noise levels. Experimental results show that our approach outperforms state-of-the-art shape generations quantitatively and qualitatively on ShapeNet-v2.
+          </p>
+<!--          <img src="static/images/intro.png" alt="MY ALT TEXT"/>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Methodology</h2>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/overview.png" alt="MY ALT TEXT"/>
+        <h2 class="content has-text-justified">
+          Overview of GPLD3D. It employs a quality checker that assesses the geometric feasibility and physical stability scores of synthetic shapes. This quality checker guides the diffusion procedure to sample in regions of the latent space that correspond to shapes that pass the quality checker and avoid regions that do not pass the quality checker. The backbone is 3DShape2VecSet.
+       </h2>
+     </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Youtube video -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/-uIQAmH9CEI?si=qiKF9VZcZGgIPHgB" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+<!-- Gallery Results -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Gallery Results</h2>
+        <section class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-chair">
+                  <img poster="" id="chair" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_chair.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+                <div class="item item-table">
+                  <img poster="" id="table" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_table.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+                <div class="item item-airplane">
+                  <img poster="" id="airplane" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_airplane.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+                <div class="item item-car">
+                  <img poster="" id="car" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_car.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+                <div class="item item-sofa">
+                  <img poster="" id="sofa" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_sofa.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+                <div class="item item-lamp">
+                  <img poster="" id="lamp" autoplay controls muted loop playsinline height="100%">-->
+                  <img src="static/images/sup_lamp.png" alt="MY ALT TEXT"/>
+                  </img>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+<pre><code>@InProceedings{Dong_2024_CVPR,
+    author = {Dong, Yuan and Zuo, Qi and Gu, Xiaodong and Yuan, Weihao and Zhao, Zhengyi and Dong, Zilong and Bo, Liefeng and Huang, Qixing},
+    title = {GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Geometric and Physical Priors},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month = {June}, year = {2024}, pages = {56-66} }
+}
+    </code></pre>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
